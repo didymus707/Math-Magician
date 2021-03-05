@@ -38,7 +38,7 @@ const calculate = (data, btn) => {
     next = null;
     operation = null;
   }
-  return {total, next, operation };
+  return { total, next, operation };
 };
 
 export default calculate;

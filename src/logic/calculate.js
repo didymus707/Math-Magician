@@ -1,33 +1,34 @@
 /* eslint-disable radix */
 /* eslint-disable no-unused-expressions */
-const calculate = (data, buttonName) => {
-  debugger
+const calculate = (data, btn) => {
   let { total, next, operation } = data;
-  let first = '';
-  let operations = ['/', '*', '-', '+', '%'];
-  // total = 0;
+  total = '';
   next = '';
-
   const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-  if (digits.includes(buttonName)) {
-    next += buttonName;
-    console.log(next);
+  const operators = ['/', 'X', '-', '+', '%'];
+  if (digits.includes(btn)) {
+    next += btn;
   }
-  if (buttonName === '.') {
-    if (next === '') {
-      next = `0${buttonName}`;
-      console.log(next);
-    }
+  if (btn === '.') {
     if (!next.includes('.')) {
-      next + buttonName;
-      console.log(next);
+      next += btn;
+    }
+    if (next === '') {
+      next = `0${btn}`;
     }
   }
-  // if (operations.includes(buttonName)) {
-  // }
-  next.includes('.') ? first = parseFloat(next) : first = parseInt(next);
-  return first;
+  if (operators.includes(btn)) {
+    operation = btn;
+    total += next;
+    next = '';
+  }
+  if (btn === '+/-') {
+    total.includes('.') ? total = (parseFloat(total) * -1).toString() : (parseInt(total) * -1).toString();
+    next.includes('.') ? next = (parseFloat(next) * -1).toString() : (parseInt(next) * -1).toString();
+  }
+  if (btn === '=') {
+    total = eval(total, operation, next);
+  }
 };
 
-console.log(calculate({ total: 0, next: '', operation: [] }, '52'));
-// export default calculate;
+export default calculate;

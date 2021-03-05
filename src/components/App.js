@@ -4,7 +4,7 @@ import '../App.css';
 
 const App = () => (
   <div className="App">
-    <Display result="0" />
+    <Display />
     <ButtonPanel />
   </div>
 );

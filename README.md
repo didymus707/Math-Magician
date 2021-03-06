@@ -1,4 +1,4 @@
-# 🔰 Math-Magician
+# 🔰 Calclator
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is a calculator that is used to perform some basic operations. This projects tests the students understanding of React techniques and features such as functional and class components and props, states, event handlers and lifting states up.
 

@@ -25,10 +25,10 @@ class App extends Component {
 }
 
 const App = () => (
-  <div className="App">
+  <>
     <Display />
     <ButtonPanel />
-  </div>
+  </>
 );
 
 export default App;

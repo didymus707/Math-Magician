@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-// import calculate from '../logic/calculate';
+import calculate from '../logic/calculate';
 import '../App.css';
 
 class App extends Component {
@@ -13,10 +13,14 @@ class App extends Component {
       next: null,
       operation: null,
     };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(btn) {
-    btn;
+    this.setState(state => ({
+      total: calculate(),
+    }));
   }
 
   render() {
@@ -25,7 +29,7 @@ class App extends Component {
         <Display />
         <ButtonPanel />
       </>
-    )
+    );
   }
 }
 

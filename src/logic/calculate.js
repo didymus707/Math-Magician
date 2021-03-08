@@ -4,9 +4,6 @@ import operate from './operate';
 
 const calculate = (data, btn) => {
   let { total, next, operation } = data;
-  total = null;
-  next = null;
-  operation = null;
   const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
   const operators = ['/', 'X', '-', '+', '%'];
   if (btn === 'AC') {
@@ -26,9 +23,15 @@ const calculate = (data, btn) => {
     }
   }
   if (operators.includes(btn)) {
-    operation = btn;
-    total = next;
-    next = null;
+    if (total && next && operation)  {
+      total = operate(total, next, operation);
+      next = null;
+      operation = null;
+    } else {
+      total = next;
+      operation = btn;
+      next = null;
+    }
   }
   if (btn === '+/-') {
     total.includes('.') ? total = (parseFloat(total) * -1).toString() : (parseInt(total) * -1).toString();

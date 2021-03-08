@@ -19,7 +19,9 @@ class App extends Component {
 
   handleClick(btn) {
     this.setState(state => ({
-      total: calculate(),
+      total: calculate(state, btn),
+      next: calculate(state, btn),
+      operation: calculate(state, btn),
     }));
   }
 

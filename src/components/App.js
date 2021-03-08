@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
@@ -19,19 +18,21 @@ class App extends Component {
   }
 
   handleClick(btn) {
-    this.setState(state => ({
-      total: calculate(state, btn),
-      next: calculate(state, btn),
-      operation: calculate(state, btn),
+    const results = calculate(this.state, btn);
+    this.setState(() => ({
+      total: results.total,
+      next: results.next,
+      operation: results.operation,
     }));
   }
 
   render() {
-    const { total } = this.state;
+    const { total, next, operation } = this.state;
+    const operations = operation ? next : total;
     return (
       <>
-        <Display result={total} />
-        <ButtonPanel />
+        <Display result={operations || total || next || '0'} />
+        <ButtonPanel onBtnClick={this.handleClick} />
       </>
     );
   }

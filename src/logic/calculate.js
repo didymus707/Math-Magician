@@ -23,7 +23,7 @@ const calculate = (data, btn) => {
     }
   }
   if (operators.includes(btn)) {
-    if (total && next && operation)  {
+    if (total && next && operation) {
       total = operate(total, next, operation);
       next = null;
       operation = null;

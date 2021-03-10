@@ -3,6 +3,7 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 import '../App.css';
+import '../css/style.css';
 
 class App extends Component {
   constructor(props) {
@@ -31,8 +32,10 @@ class App extends Component {
     const operations = operation ? next : total;
     return (
       <>
-        <Display result={operations || total || next || '0'} />
-        <ButtonPanel onBtnClick={this.handleClick} />
+        <div className="App">
+          <Display result={operations || total || next || '0'} />
+          <ButtonPanel onBtnClick={this.handleClick} />
+        </div>
       </>
     );
   }

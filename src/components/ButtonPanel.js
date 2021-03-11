@@ -1,5 +1,3 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import Buttton from './Button';
 

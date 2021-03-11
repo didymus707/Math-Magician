@@ -1,5 +1,3 @@
-/* eslint-disable radix */
-/* eslint-disable no-unused-expressions */
 import operate from './operate';
 
 const calculate = (data, btn) => {
@@ -14,7 +12,8 @@ const calculate = (data, btn) => {
     operation = null;
   }
   if (digits.includes(btn)) {
-    next ? next += btn : next = btn;
+    if (next) next += btn;
+    else next = btn;
   }
   if (btn === '.') {
     if (!next.includes('.')) {
@@ -30,8 +29,8 @@ const calculate = (data, btn) => {
     next = null;
   }
   if (btn === '+/-') {
-    total.includes('.') ? total = (parseFloat(total) * -1).toString() : (parseInt(total) * -1).toString();
-    next.includes('.') ? next = (parseFloat(next) * -1).toString() : (parseInt(next) * -1).toString();
+    total = (total * -1).toString();
+    next = (next * -1).toString();
   }
   if (btn === '=') {
     if (total && operation && next) { total = operate(total, next, operation); }

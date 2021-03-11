@@ -1,44 +1,33 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 import '../App.css';
 import '../css/style.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
 
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
+  const handleClick = btn => {
+    const data = { total, next, operation };
+    const results = calculate(data, btn);
+    setTotal(results.total);
+    setNext(results.next);
+    setOperation(results.operation);
+  };
 
-    this.handleClick = this.handleClick.bind(this);
-  }
+  const operations = operation ? next : total;
 
-  handleClick(btn) {
-    const results = calculate(this.state, btn);
-    this.setState(() => ({
-      total: results.total,
-      next: results.next,
-      operation: results.operation,
-    }));
-  }
-
-  render() {
-    const { total, next, operation } = this.state;
-    const operations = operation ? next : total;
-    return (
-      <>
-        <div className="App">
-          <Display result={operations || total || next || '0'} />
-          <ButtonPanel onBtnClick={this.handleClick} />
-        </div>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <div className="App">
+        <Display result={operations || total || next || '0'} />
+        <ButtonPanel onBtnClick={handleClick} />
+      </div>
+    </>
+  );
+};
 
 export default App;

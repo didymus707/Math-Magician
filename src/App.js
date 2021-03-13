@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Display from './Display';
-import ButtonPanel from './ButtonPanel';
-import calculate from '../logic/calculate';
-import '../App.css';
+import Display from './components/Display';
+import ButtonPanel from './components/ButtonPanel';
+import calculate from './logic/calculate';
+import './App.css';
 
 class App extends Component {
   constructor(props) {

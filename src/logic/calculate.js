@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import operate from './operate';
 
 const calculate = (data, btn) => {
@@ -17,8 +18,9 @@ const calculate = (data, btn) => {
   }
 
   if (btn === '.') {
-    if (!next.includes('.')) { next += btn; }
-    if (next === null) { next = `0${btn}`; }
+    console.log(next);
+    if (next !== null && !next.includes('.')) next += btn;
+    else next = `0${btn}`;
   }
 
   if (operators.includes(btn)) {
@@ -27,7 +29,10 @@ const calculate = (data, btn) => {
       operation = btn;
       next = null;
     } else if (total) {
-      operation = btn;
+      if (btn === '%') total = operate(total, '100', '%');
+      else operation = btn;
+    } else if (btn === '%' && next) {
+      next = operate(next, '100', '%');
     } else {
       total = next;
       operation = btn;

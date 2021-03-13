@@ -9,8 +9,7 @@ const operate = (one, two, operation) => {
   if (operation === 'X') result = numOne.times(numTwo);
   if (operation === '%') result = numOne.div(numTwo);
   if (operation === '/') {
-    console.log(numTwo);
-    if (numTwo === '0') result = 'undefined';
+    if (two === '0') result = 'undefined';
     else result = numOne.div(numTwo);
   }
   return result.toString();

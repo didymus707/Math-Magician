@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Buttton from './Button';
 
 const buttons = {
@@ -12,61 +11,24 @@ const buttons = {
 
 const arr = Object.keys(buttons);
 
-const ButtonPanel = ({ onBtnClick }) => {
-  const handleClick = btn => onBtnClick(btn);
-  return (
-    <>
-      <div className="group1">
-        {buttons[arr[0]].map(el => (
-          <Buttton
-            key={el}
-            name={el}
-            clickHandler={() => handleClick(el)}
-          />
-        ))}
-      </div>
-      <div className="group2">
-        {buttons[arr[1]].map(el => (
-          <Buttton
-            key={el}
-            name={el}
-            clickHandler={() => handleClick(el)}
-          />
-        ))}
-      </div>
-      <div className="group3">
-        {buttons[arr[2]].map(el => (
-          <Buttton
-            key={el}
-            name={el}
-            clickHandler={() => handleClick(el)}
-          />
-        ))}
-      </div>
-      <div className="group4">
-        {buttons[arr[3]].map(el => (
-          <Buttton
-            key={el}
-            name={el}
-            clickHandler={() => handleClick(el)}
-          />
-        ))}
-      </div>
-      <div className="group5">
-        {buttons[arr[4]].map(el => (
-          <Buttton
-            key={el}
-            name={el}
-            clickHandler={() => handleClick(el)}
-          />
-        ))}
-      </div>
-    </>
-  );
-};
-
-ButtonPanel.propTypes = {
-  onBtnClick: PropTypes.func.isRequired,
-};
+const ButtonPanel = () => (
+  <>
+    <div className="group1">
+      {buttons[arr[0]].map(el => <Buttton key={el} name={el} />)}
+    </div>
+    <div className="group2">
+      {buttons[arr[1]].map(el => <Buttton key={el} name={el} />)}
+    </div>
+    <div className="group3">
+      {buttons[arr[2]].map(el => <Buttton key={el} name={el} />)}
+    </div>
+    <div className="group4">
+      {buttons[arr[3]].map(el => <Buttton key={el} name={el} />)}
+    </div>
+    <div className="group5">
+      {buttons[arr[4]].map(el => <Buttton key={el} name={el} />)}
+    </div>
+  </>
+);
 
 export default ButtonPanel;

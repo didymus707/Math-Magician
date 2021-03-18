@@ -16,12 +16,8 @@ const calculate = (data, btn) => {
     else next = btn;
   }
   if (btn === '.') {
-    if (!next.includes('.')) {
-      next += btn;
-    }
-    if (next === null) {
-      next = `0${btn}`;
-    }
+    if (next !== null && !next.includes('.')) next += btn;
+    else next = `0${btn}`;
   }
   if (operators.includes(btn)) {
     operation = btn;

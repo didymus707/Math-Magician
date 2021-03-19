@@ -5,6 +5,8 @@ const calculate = (data, btn) => {
   const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
   const operators = ['/', 'X', '-', '+', '%'];
 
+  if (total === 'undefined') total = null;
+
   if (btn === 'AC') {
     total = null;
     next = null;
@@ -17,8 +19,8 @@ const calculate = (data, btn) => {
   }
 
   if (btn === '.') {
-    if (!next.includes('.')) { next += btn; }
-    if (next === null) { next = `0${btn}`; }
+    if (next !== null && !next.includes('.')) next += btn;
+    else next = `0${btn}`;
   }
 
   if (operators.includes(btn)) {
@@ -27,7 +29,10 @@ const calculate = (data, btn) => {
       operation = btn;
       next = null;
     } else if (total) {
-      operation = btn;
+      if (btn === '%') total = operate(total, '100', '%');
+      else operation = btn;
+    } else if (btn === '%' && next) {
+      next = operate(next, '100', '%');
     } else {
       total = next;
       operation = btn;

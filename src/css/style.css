@@ -12,8 +12,8 @@
   display: flex;
   justify-content: space-between;
   font-style: italic;
-  color: #0074D9;
-  background-color: #A8DAFF;
+  color: #0074d9;
+  background-color: #a8daff;
   padding: 12px;
   margin: -8px;
   width: 100%;
@@ -34,13 +34,13 @@ ul li {
 }
 
 ul li a {
-  color: #0074D9;
+  color: #0074d9;
   text-decoration: none;
   font-weight: bold;
 }
 
 .contents h2 {
-  color: #0074D9
+  color: #0074d9;
 }
 
 .cal {
@@ -120,6 +120,6 @@ ul li a {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 14px
+    padding: 14px;
   }
 }

@@ -3,6 +3,7 @@ import Display from './components/Display';
 import ButtonPanel from './components/ButtonPanel';
 import calculate from './logic/calculate';
 import './App.css';
+import './css/style.css';
 
 class App extends Component {
   constructor(props) {

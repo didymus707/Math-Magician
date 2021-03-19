@@ -4,6 +4,7 @@ import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 import '../App.css';
 import '../css/style.css';
+import Nav from './Nav';
 
 const Calculator = () => {
   const [total, setTotal] = useState(null);
@@ -22,9 +23,15 @@ const Calculator = () => {
 
   return (
     <>
-      <div className="calc">
-        <Display result={operations || total || next || '0'} />
-        <ButtonPanel onBtnClick={handleClick} />
+      <Nav />
+      <div className="calc-con">
+        <div className="math">
+          <p>Let&apos;s do some Math!</p>
+        </div>
+        <div className="cal">
+          <Display result={operations || total || next || '0'} />
+          <ButtonPanel onBtnClick={handleClick} />
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,222 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+Array [
+  <nav
+    className="nav-con"
+  >
+    <h1>
+      Math Magician
+    </h1>
+    <ul>
+      <li
+        className="home"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Home
+        </a>
+      </li>
+      <li
+        className="calc"
+      >
+        <a
+          href="/calculator"
+          onClick={[Function]}
+        >
+          Calulator
+        </a>
+      </li>
+      <li
+        className="quo"
+      >
+        <a
+          href="/quote"
+          onClick={[Function]}
+        >
+          Quote
+        </a>
+      </li>
+    </ul>
+  </nav>,
+  <div
+    className="calc-con"
+  >
+    <div
+      className="math"
+    >
+      <p>
+        Let's do some Math!
+      </p>
+    </div>
+    <div
+      className="cal"
+    >
+      <div
+        className="display"
+      >
+        0
+      </div>
+      <div
+        className="groups"
+      >
+        <div
+          className="row group1"
+        >
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            AC
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            +/-
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            %
+          </button>
+          <button
+            className="btn btn-color"
+            onClick={[Function]}
+            type="button"
+          >
+            /
+          </button>
+        </div>
+        <div
+          className="row group2"
+        >
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            7
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            8
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            9
+          </button>
+          <button
+            className="btn btn-color"
+            onClick={[Function]}
+            type="button"
+          >
+            X
+          </button>
+        </div>
+        <div
+          className="row group3"
+        >
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            4
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            5
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            6
+          </button>
+          <button
+            className="btn btn-color"
+            onClick={[Function]}
+            type="button"
+          >
+            -
+          </button>
+        </div>
+        <div
+          className="row group4"
+        >
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            1
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            2
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            3
+          </button>
+          <button
+            className="btn btn-color"
+            onClick={[Function]}
+            type="button"
+          >
+            +
+          </button>
+        </div>
+        <div
+          className="row group5"
+        >
+          <button
+            className="btn btn-wide"
+            onClick={[Function]}
+            type="button"
+          >
+            0
+          </button>
+          <button
+            className="btn undefined"
+            onClick={[Function]}
+            type="button"
+          >
+            .
+          </button>
+          <button
+            className="btn btn-color"
+            onClick={[Function]}
+            type="button"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
